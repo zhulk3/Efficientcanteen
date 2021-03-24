@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tab_array">
+        <item>选餐</item>
+        <item>订单</item>
+        <item>饭吧</item>
+        <item>我</item>
+    </string-array>
+</resources>

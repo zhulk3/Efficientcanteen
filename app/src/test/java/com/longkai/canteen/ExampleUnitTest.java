@@ -1,4 +1,4 @@
-package com.longkai.eas;
+package com.longkai.canteen;
 
 import org.junit.Test;
 
