@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<lite>
+  <dbname value="canteen"/>
+  <version value="1"/>
+  <list>
+    <mapping class="com.longkai.canteen.db.Canteen"/>
+    <mapping class="com.longkai.canteen.db.Dish"/>
+    <mapping class="com.longkai.canteen.db.Type"/>
+    <mapping class="com.longkai.canteen.db.LoginStatus"/>
+  </list>
+</lite>

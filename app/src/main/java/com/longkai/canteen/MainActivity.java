@@ -54,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     ButterKnife.bind(this);
-
+    androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolBar);
+    setSupportActionBar(toolbar);
     mTabViews.add(mTabWeixin);
     mTabViews.add(mTabContact);
     mTabViews.add(mTabFind);
