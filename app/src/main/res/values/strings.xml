@@ -1,3 +1,4 @@
 <resources>
-  <string name="app_name">Efficient-canteen</string>
+  <string name="app_name">EfficientCanteen</string>
+  <string name="ruler">1、订餐以后及时取餐，不能长时间存放\n2、不接受退订，请谨慎点餐\n</string>
 </resources>
