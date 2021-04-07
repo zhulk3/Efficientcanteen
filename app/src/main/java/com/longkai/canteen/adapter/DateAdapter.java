@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.longkai.canteen.R;
+import com.longkai.canteen.fragment.DishFragment;
 import com.longkai.canteen.pojo.ChooseDate;
 
 public class DateAdapter extends RecyclerView.Adapter<DateAdapter.ViewHolder> {
@@ -33,9 +34,9 @@ public class DateAdapter extends RecyclerView.Adapter<DateAdapter.ViewHolder> {
       @Override
       public void onClick(View v) {
         int position=holder.getAdapterPosition();
-
+        DishFragment.setWhichDay(position);
+        DishFragment.filterDishes();
         holder.chooseView.setBackgroundColor(Color.rgb(0, 0, 0));
-        System.out.println(mDateList.get(choiceDate)+"hha");
         holder.date.setTextSize(14);
         holder.weekday.setTextSize(14);
         holder.chooseView.setBackgroundColor(Color.rgb(255, 0, 0));

@@ -34,9 +34,10 @@ public class LoginActivity extends AppCompatActivity {
   private SharedPreferences.Editor mEditor;
   private SharedPreferences mSharedPreferences;
   private Boolean isRememberPassword;
-  private  CheckBox checkBox ;
-  private String account;
-  private String password;
+  private CheckBox checkBox;
+  public static String account;
+  public static String password;
+  public static int id;
   private static final String TAG = "LoginActivity";
 
   @Override
@@ -53,7 +54,9 @@ public class LoginActivity extends AppCompatActivity {
       public void onClick(View v) {
         account = mAccount.getText().toString();
         password = mPassword.getText().toString();
-        String url="http://172.26.112.250:8080/canteen-ordering-system/userinfo/login?name="+account+"&password="+password;
+        String url =
+            "http://172.26.10.104:8081/canteen-ordering-system/userinfo/login?name=" + account +
+                "&password=" + password;
         verify(url);
 
       }
@@ -68,7 +71,6 @@ public class LoginActivity extends AppCompatActivity {
       mPassword.setText(password);
       checkBox.setChecked(true);
     }
-
   }
 
   private void verify(String url) {
@@ -83,8 +85,8 @@ public class LoginActivity extends AppCompatActivity {
       public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
         String responseText = response.body().string();
         LoginStatus loginStatus = Utility.handleLoginResponse(responseText);
-        System.out.println(loginStatus);
-        if(loginStatus!=null&&"true".equals(loginStatus.getSuccess())&&"登录成功".equals(loginStatus.getMessage())){
+        if (loginStatus != null && "true".equals(loginStatus.getSuccess()) &&
+            "登录成功".equals(loginStatus.getMessage())) {
           if (checkBox.isChecked()) {
             mEditor.putString("account", account);
             mEditor.putString("password", password);
@@ -96,8 +98,8 @@ public class LoginActivity extends AppCompatActivity {
           Intent intent = new Intent(LoginActivity.this, MainActivity.class);
           startActivity(intent);
           finish();
-          } else {
-          Toast.makeText(getApplicationContext(),"用户名或密码错误",Toast.LENGTH_SHORT).show();
+        } else {
+          Toast.makeText(getApplicationContext(), "用户名或密码错误", Toast.LENGTH_SHORT).show();
         }
       }
     });

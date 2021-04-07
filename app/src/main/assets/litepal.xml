@@ -7,5 +7,9 @@
     <mapping class="com.longkai.canteen.db.Dish"/>
     <mapping class="com.longkai.canteen.db.Type"/>
     <mapping class="com.longkai.canteen.db.LoginStatus"/>
+    <mapping class="com.longkai.canteen.db.UserInfo"/>
+    <mapping class="com.longkai.canteen.db.OrderDetail"/>
+    <mapping class="com.longkai.canteen.db.OrderInfo"/>
+    <mapping class="com.longkai.canteen.db.AdminInfo"/>
   </list>
 </lite>

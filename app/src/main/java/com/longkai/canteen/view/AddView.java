@@ -15,35 +15,37 @@ import butterknife.OnClick;
 public class AddView extends LinearLayout implements View.OnClickListener {
 
 
-  private int value = 1;
-  private int minValue = 1;
+  private int value = 0;
+  private int minValue = 0;
   private int maxValue = 10;
-  private final TextView tvCount;
+  private  TextView tvCount;
+
+
 
   public AddView(Context context, AttributeSet attrs) {
     super(context, attrs);
     View view = View.inflate(context, R.layout.change_num, this);
+    
     ImageView btn_reduce = (ImageView) view.findViewById(R.id.btn_reduce);
     tvCount = (TextView) view.findViewById(R.id.tv_count);
     ImageView btn_add = (ImageView) view.findViewById(R.id.btn_add);
     btn_reduce.setOnClickListener(this);
     btn_add.setOnClickListener(this);
     //设置默认值
-    int value = getValue();
     setValue(value);
   }
 
-  @OnClick({R.id.btn_reduce, R.id.btn_add})
-  public void onViewClicked(View view) {
-    switch (view.getId()) {
-      case R.id.btn_reduce://减
-        reduce();
-        break;
-      case R.id.btn_add://加
-        add();
-        break;
-    }
-  }
+//  @OnClick({R.id.btn_reduce, R.id.btn_add})
+//  public void onViewClicked(View view) {
+//    switch (view.getId()) {
+//      case R.id.btn_reduce://减
+//        reduce();
+//        break;
+//      case R.id.btn_add://加
+//        add();
+//        break;
+//    }
+//  }
 
   /**
    * 如果当前值大于最小值   减
@@ -73,10 +75,7 @@ public class AddView extends LinearLayout implements View.OnClickListener {
 
   //获取具体值
   public int getValue() {
-    String countStr = tvCount.getText().toString().trim();
-    if (countStr != null) {
-      value = Integer.valueOf(countStr);
-    }
+
     return value;
   }
 

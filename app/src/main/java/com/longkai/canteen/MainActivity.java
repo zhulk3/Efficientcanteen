@@ -5,7 +5,9 @@ import java.util.List;
 
 import android.os.Bundle;
 import android.view.View;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -54,8 +56,12 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     ButterKnife.bind(this);
-    androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolBar);
+    Toolbar toolbar = findViewById(R.id.toolBar);
     setSupportActionBar(toolbar);
+    ActionBar actionBar = getSupportActionBar();
+    if (actionBar != null) {
+      actionBar.setDisplayHomeAsUpEnabled(true);
+    }
     mTabViews.add(mTabWeixin);
     mTabViews.add(mTabContact);
     mTabViews.add(mTabFind);
