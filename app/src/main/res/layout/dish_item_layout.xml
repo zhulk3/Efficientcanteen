@@ -9,8 +9,6 @@
   <androidx.cardview.widget.CardView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-
-
     android:layout_margin="5dp"
     app:cardCornerRadius="5dp">
 
@@ -21,16 +19,19 @@
 
       <ImageView
 
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:id="@+id/image"/>
+        android:id="@+id/image"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:scaleType="center" />
 
       <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="14sp" />
+        android:layout_margin="5dp"
+        android:textSize="16sp"
+        android:textStyle="bold" />
     </LinearLayout>
 
 
@@ -39,37 +40,29 @@
 
   <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="120dp"
     android:layout_marginLeft="8dp"
     android:orientation="vertical">
 
     <LinearLayout
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal">
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:orientation="vertical">
 
       <TextView
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="14sp"
+        android:text="简介："
         android:textStyle="bold" />
 
       <TextView
-        android:id="@+id/type"
+        android:id="@+id/intro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="类型"
-        android:textSize="12sp" />
-
+        android:textSize="12sp"
+        android:textStyle="italic" />
     </LinearLayout>
-
-    <TextView
-      android:id="@+id/intro"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginVertical="3dp"
-      android:textSize="10sp" />
 
     <LinearLayout
       android:layout_width="match_parent"
@@ -78,21 +71,110 @@
       android:orientation="horizontal"
       android:paddingVertical="2dp">
 
-      <TextView
-        android:id="@+id/price"
+      <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal">
 
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="单价："
+          android:textStyle="bold" />
+
+        <TextView
+          android:id="@+id/price"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="类型："
+          android:textStyle="bold" />
+
+        <TextView
+          android:id="@+id/type"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="类型" />
+      </LinearLayout>
 
       <com.longkai.canteen.view.AddView
         android:id="@+id/addView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"/>
     </LinearLayout>
 
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="20dp"
+      android:layout_gravity="center_vertical"
+      android:orientation="horizontal">
 
+      <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ImageView
+          android:layout_width="20dp"
+          android:layout_height="20dp"
+          android:src="@drawable/which_day" />
+
+        <TextView
+          android:id="@+id/which_day"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="日期" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ImageView
+          android:layout_width="20dp"
+          android:layout_height="20dp"
+          android:src="@drawable/times" />
+
+        <TextView
+          android:id="@+id/meal_time"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="中午" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ImageView
+          android:layout_width="20dp"
+          android:layout_height="20dp"
+          android:src="@drawable/canteen_location" />
+
+        <TextView
+          android:id="@+id/detail_canteen"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="第一食堂" />
+      </LinearLayout>
+    </LinearLayout>
   </LinearLayout>
-
-
 </LinearLayout>

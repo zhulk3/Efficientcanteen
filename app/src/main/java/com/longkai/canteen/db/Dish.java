@@ -20,6 +20,7 @@ public class Dish extends LitePalSupport {
   private double priceTo;
   private int whichCanteens;
   private int whichday;
+  private int whichMeal;
 
   public Drawable getDishName() {
     return dishName;
@@ -93,30 +94,6 @@ public class Dish extends LitePalSupport {
     this.intro = intro;
   }
 
-  public int getStatus() {
-    return status;
-  }
-
-  public void setStatus(int status) {
-    this.status = status;
-  }
-
-  public double getPriceFrom() {
-    return priceFrom;
-  }
-
-  public void setPriceFrom(double priceFrom) {
-    this.priceFrom = priceFrom;
-  }
-
-  public double getPriceTo() {
-    return priceTo;
-  }
-
-  public void setPriceTo(double priceTo) {
-    this.priceTo = priceTo;
-  }
-
   public int getWhichCanteens() {
     return whichCanteens;
   }
@@ -131,6 +108,14 @@ public class Dish extends LitePalSupport {
 
   public void setWhichday(int whichday) {
     this.whichday = whichday;
+  }
+
+  public int getWhichMeal() {
+    return whichMeal;
+  }
+
+  public void setWhichMeal(int whichMeal) {
+    this.whichMeal = whichMeal;
   }
 
   @Override
