@@ -22,7 +22,8 @@ public class HttpUtil {
     okHttpClient.newCall(request).enqueue(callback);
   }
 
-  public static void sendHttpRequestWithPost(String url, Inserted inserted, Orderinfo orderinfo,okhttp3.Callback callback){
+  public static void sendHttpRequestWithPost(String url, Inserted inserted, Orderinfo orderinfo,
+      okhttp3.Callback callback){
     Gson gson = new Gson();
     String i=gson.toJson(inserted);
     String o = gson.toJson(orderinfo);

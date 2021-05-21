@@ -133,7 +133,7 @@ public class ProfileFragment extends BaseFragment {
       String name = LoginActivity.account;
       String password = LoginActivity.password;
       String url =
-          "http://172.26.10.104:8081/canteen-ordering-system/userinfo/getUserInfo?name=" + name +
+          "http://172.26.61.134:8081/canteen-ordering-system/userinfo/getUserInfo?name=" + name +
               "&password=" + password;
       queryUserInfo(url);
     }

@@ -106,7 +106,7 @@ public class FindFragment extends BaseFragment {
     } else {
 
       String url =
-          "http://172.26.10.104:8081/canteen-ordering-system/admininfo/admininfoList";
+          "http://172.26.61.134:8081/canteen-ordering-system/admininfo/admininfoList";
       queryAdminInfo(url);
     }
   }

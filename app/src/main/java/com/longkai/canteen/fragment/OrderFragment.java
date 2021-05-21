@@ -132,7 +132,7 @@ public class OrderFragment extends BaseFragment {
       readOrderDetailFromLocal();
     } else {
       String url =
-          "http://172.26.10.104:8081/canteen-ordering-system/orderinfo/findOrderInfo?uid=" +
+          "http://172.26.61.134:8081/canteen-ordering-system/orderinfo/findOrderInfo?uid=" +
               LoginActivity.id;
       queryOrderInfo(url);
     }
@@ -184,7 +184,7 @@ public class OrderFragment extends BaseFragment {
       if (oids.size() > 0) {
         for (int oid : oids) {
           String url =
-              "http://172.26.10.104:8081/canteen-ordering-system/orderinfo/getOrderDetails?oid=" +
+              "http://172.26.61.134:8081/canteen-ordering-system/orderinfo/getOrderDetails?oid=" +
                   oid;
           queryOrderDetail(url);
         }

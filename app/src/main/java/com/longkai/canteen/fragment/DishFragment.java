@@ -153,8 +153,8 @@ public class DishFragment extends BaseFragment {
         Inserted inserted = new Inserted();
         Orderinfo orderinfo = new Orderinfo();
         for (int i = 0; i < mDishAdapter.getCount(); i++) {
-          LinearLayout linearLayout = (LinearLayout) mListView.getAdapter().getView(i, null, null);
-
+          LinearLayout linearLayout = (LinearLayout) mListView.getAdapter().getView(i,
+              null, null);
           TextView textView = linearLayout.findViewById(R.id.tv_count);
           Integer num = Integer.parseInt(textView.getText().toString());
           TextView price = linearLayout.findViewById(R.id.price);
@@ -172,7 +172,7 @@ public class DishFragment extends BaseFragment {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String curDate = sdf.format(c.getTime());
             orderinfo.setOrdertime(curDate);
-            String url = "http://172.26.10.104:8081/canteen-ordering-system/orderinfo/commitOrder";
+            String url = "http://172.26.61.134:8081/canteen-ordering-system/orderinfo/commitOrder";
             HttpUtil.sendHttpRequestWithPost(url, inserted, orderinfo, new Callback() {
               @Override
               public void onFailure(@NotNull Call call, @NotNull IOException e) {
@@ -253,7 +253,7 @@ public class DishFragment extends BaseFragment {
       }
       canteenItems = temp.toArray(new String[temp.size()]);
     } else {
-      String url = "http://172.26.10.104:8081/canteen-ordering-system/canteen/getCanteen";
+      String url = "http://172.26.61.134:8081/canteen-ordering-system/canteen/getCanteen";
       queryCanteenListFromServer(url);
     }
   }
@@ -346,14 +346,14 @@ public class DishFragment extends BaseFragment {
       System.out.println(dish + "dish");
     }
     if (storeDishes.size() <= 0) {
-      String url = "http://172.26.10.104:8081/canteen-ordering-system/productinfo/all";
+      String url = "http://172.26.61.134:8081/canteen-ordering-system/productinfo/all";
       queryDishListFromServer(url);
     }
   }
 
   public void loadDishPic(Dish dish) {
     String url =
-        "http://172.26.10.104:8081/canteen-ordering-system/productinfo/imageDownload?fileName=" +
+        "http://172.26.61.134:8081/canteen-ordering-system/productinfo/imageDownload?fileName=" +
             dish.getPic();
 
     HttpUtil.sendHttpRequest(url, new Callback() {

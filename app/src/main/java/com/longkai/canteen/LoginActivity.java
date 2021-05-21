@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
         account = mAccount.getText().toString();
         password = mPassword.getText().toString();
         String url =
-            "http://172.26.10.104:8081/canteen-ordering-system/userinfo/login?name=" + account +
+            "http://172.26.61.134:8081/canteen-ordering-system/userinfo/login?name=" + account +
                 "&password=" + password;
         verify(url);
 

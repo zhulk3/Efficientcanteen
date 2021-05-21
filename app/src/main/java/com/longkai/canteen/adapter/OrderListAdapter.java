@@ -26,9 +26,6 @@ public class OrderListAdapter extends BaseExpandableListAdapter {
     mChildList = childList;
   }
 
-  public OrderListAdapter() {
-  }
-
   @Override
   public int getGroupCount() {//返回第一级List长度
     return mGroupList.size();
